@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
@@ -15,11 +16,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Bean @SuppressWarnings("deprecation")
     public UserDetailsService userDetailsService() {
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withDefaultPasswordEncoder()
-        		.username("user")
-        		.password("password")
-        		.roles("USER").build());
+		UserBuilder users = User.withDefaultPasswordEncoder();
+		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();       
+        manager.createUser(users.username("admin").password("123").roles("USER", "ADMIN").build());
+        manager.createUser(users.username("user").password("123").roles("USER").build());
+
         return manager;
     }
     
