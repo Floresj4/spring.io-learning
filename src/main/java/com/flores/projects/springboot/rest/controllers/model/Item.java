@@ -1,4 +1,4 @@
-package com.flores.projects.springboot.rest.controllers;
+package com.flores.projects.springboot.rest.controllers.model;
 
 public class Item {
 	
