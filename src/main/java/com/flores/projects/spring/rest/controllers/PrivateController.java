@@ -7,10 +7,10 @@ import com.flores.projects.spring.rest.controllers.model.Item;
 
 @RestController
 @RequestMapping("/private")
-public class ItemController {
+public class PrivateController {
 
 	@RequestMapping("/randomitem")
-	public Item getRandomItem() {
+	public Item getItem() {
 		return new Item("Apple", "red");
 	}
 	
