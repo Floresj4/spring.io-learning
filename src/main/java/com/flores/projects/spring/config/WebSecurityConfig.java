@@ -1,4 +1,4 @@
-package com.flores.projects.springboot.config;
+package com.flores.projects.spring.config;
 
 
 import org.springframework.context.annotation.Bean;

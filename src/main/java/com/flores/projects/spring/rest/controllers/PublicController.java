@@ -1,4 +1,4 @@
-package com.flores.projects.springboot.rest.controllers;
+package com.flores.projects.spring.rest.controllers;
 
 import static java.lang.String.valueOf;
 
